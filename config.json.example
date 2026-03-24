@@ -1,0 +1,13 @@
+{
+  "twitch_client_id": "your_twitch_client_id_here",
+  "twitch_token": "your_twitch_oauth_token_here",
+  "youtube_api_key": "your_youtube_api_key_here",
+  "games": [
+    "12345",
+    "67890"
+  ],
+  "post_frequency": "3_per_week",
+  "max_clips_per_run": 20,
+  "min_views": 500,
+  "min_likes": 10
+}
