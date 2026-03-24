@@ -72,11 +72,13 @@ class TwitchToYouTube:
         score = 0
         
         # View count (max 10 points)
-        view_score = min(clip.get('view_count', 0) / 1000, 10)
+        view_count = clip.get('view_count', 0)
+        view_score = min(view_count / 1000, 10)
         score += view_score
         
-        # Like count (max 5 points)
-        like_score = min(clip.get('like_count', 0) / 100, 5)
+        # Like count (max 5 points) - some clips don't have this
+        like_count = clip.get('like_count', clip.get('total_views', 0) // 50)  # Fallback estimate
+        like_score = min(like_count / 100, 5)
         score += like_score
         
         # Duration bonus (30-60s is optimal)
